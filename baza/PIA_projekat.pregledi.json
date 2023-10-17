@@ -1,0 +1,280 @@
+[{
+  "_id": {
+    "$oid": "6508a62cd4faeab884dc56d9"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent1",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Snimanje grudi",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 50,
+  "cena": "2899.99",
+  "vreme": {
+    "$date": "2023-09-21T07:00:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508abf0d4faeab884dc56e7"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent1",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Pregled grla",
+  "specijalizacija": "Pedijatrija",
+  "trajanje": 15,
+  "cena": "249.99",
+  "vreme": {
+    "$date": "2023-09-20T16:00:00.000Z"
+  },
+  "ogranak": "Miljakovac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508aca1d4faeab884dc56ec"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent1",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Snimanje ruke",
+  "specijalizacija": "Pedijatrija",
+  "trajanje": 30,
+  "cena": "4599.99",
+  "vreme": {
+    "$date": "2023-09-21T17:00:00.000Z"
+  },
+  "ogranak": "Miljakovac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508acb6d4faeab884dc56f0"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent1",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Merenje temperature",
+  "specijalizacija": "Pedijatrija",
+  "trajanje": 10,
+  "cena": "24.99",
+  "vreme": {
+    "$date": "2023-09-22T17:00:00.000Z"
+  },
+  "ogranak": "Miljakovac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508acded4faeab884dc56fe"
+  },
+  "lekar": "pera",
+  "pacijent": "pacijent1",
+  "imeLekara": "Petar",
+  "prezimeLekara": "Jovanović",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Pregled",
+  "specijalizacija": "Stomatologija",
+  "trajanje": 15,
+  "cena": "249.99",
+  "vreme": {
+    "$date": "2023-09-21T18:00:00.000Z"
+  },
+  "ogranak": "Mirijevo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ace8d4faeab884dc5702"
+  },
+  "lekar": "pera",
+  "pacijent": "pacijent1",
+  "imeLekara": "Petar",
+  "prezimeLekara": "Jovanović",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Čišćenje desni",
+  "specijalizacija": "Stomatologija",
+  "trajanje": 15,
+  "cena": "899.99",
+  "vreme": {
+    "$date": "2023-09-22T16:00:00.000Z"
+  },
+  "ogranak": "Mirijevo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ad08d4faeab884dc570c"
+  },
+  "lekar": "marija",
+  "pacijent": "pacijent1",
+  "imeLekara": "Marija",
+  "prezimeLekara": "Krstić",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Pregled nogu",
+  "specijalizacija": "Ortopedija",
+  "trajanje": 20,
+  "cena": "259.99",
+  "vreme": {
+    "$date": "2023-09-21T18:00:00.000Z"
+  },
+  "ogranak": "Stepojevac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ae3ad4faeab884dc5729"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent2",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "naziv": "Pregled grudi",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 20,
+  "cena": "499.99",
+  "vreme": {
+    "$date": "2023-09-19T17:00:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ae46d4faeab884dc572d"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent2",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "naziv": "Snimanje grudi",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 50,
+  "cena": "2899.99",
+  "vreme": {
+    "$date": "2023-09-19T18:00:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ae58d4faeab884dc5732"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent2",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "naziv": "Merenje pulsa",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 15,
+  "cena": "199.99",
+  "vreme": {
+    "$date": "2023-09-21T08:00:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ae84d4faeab884dc5741"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent2",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "naziv": "Pregled grla",
+  "specijalizacija": "Pedijatrija",
+  "trajanje": 15,
+  "cena": "249.99",
+  "vreme": {
+    "$date": "2023-09-20T05:00:00.000Z"
+  },
+  "ogranak": "Miljakovac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508ae91d4faeab884dc5745"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent2",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "naziv": "Snimanje ruke",
+  "specijalizacija": "Pedijatrija",
+  "trajanje": 30,
+  "cena": "4599.99",
+  "vreme": {
+    "$date": "2023-09-22T08:00:00.000Z"
+  },
+  "ogranak": "Miljakovac",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508f24ba7b9fa1883253e18"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent1",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Pregled grudi",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 20,
+  "cena": "499.99",
+  "vreme": {
+    "$date": "2023-09-19T08:00:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508f25ca7b9fa1883253e1c"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent1",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "naziv": "Snimanje grudi",
+  "specijalizacija": "Kardiologija",
+  "trajanje": 50,
+  "cena": "2899.99",
+  "vreme": {
+    "$date": "2023-09-20T10:30:00.000Z"
+  },
+  "ogranak": "Zemun",
+  "__v": 0
+}]

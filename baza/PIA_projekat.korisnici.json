@@ -1,0 +1,465 @@
+[{
+  "_id": {
+    "$oid": "64f8b50338519709c4eb416e"
+  },
+  "adresa": "",
+  "email": "",
+  "ime": "Uros",
+  "kontakt_telefon": "",
+  "korisnicko_ime": "admin",
+  "lozinka": "Admin123!",
+  "prezime": "Stefanovic",
+  "profilna": "",
+  "stanje_registracije": "PRIHVACENO",
+  "tip": "menadzer"
+},
+{
+  "_id": {
+    "$oid": "64f8bbd4b8a317759f4cd47f"
+  },
+  "korisnicko_ime": "mateja",
+  "lozinka": "Mateja12!",
+  "ime": "Mateja",
+  "prezime": "Matić",
+  "tip": "lekar",
+  "adresa": "Kralja Milana 23",
+  "kontakt_telefon": "2345678901",
+  "email": "nesto@gmail.com",
+  "profilna": "1694290382886--3d-render-male-avatar-with-blue-sweater-good-for-profile-picture-photo.jpg",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 23,
+  "specijalizacija": "Kardiologija",
+  "ogranak": "Zemun",
+  "vrste_pregleda": [
+    "Pregled grudi",
+    "Merenje pulsa",
+    "Snimanje grudi"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f8bc78b8a317759f4cd482"
+  },
+  "korisnicko_ime": "ana",
+  "lozinka": "Ana1234!",
+  "ime": "Ana",
+  "prezime": "Petronijević",
+  "tip": "lekar",
+  "adresa": "Kralja Milana 56",
+  "kontakt_telefon": "6789234",
+  "email": "drugo@mejl.rs",
+  "profilna": "1694022776863--renderingfemaleavatarbusinesswomanwithsuitandtiegoodforprofilepictureinbusinessorfinancethemephoto.jpg",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 56,
+  "specijalizacija": "Pedijatrija",
+  "ogranak": "Miljakovac",
+  "vrste_pregleda": [
+    "Pregled grla",
+    "Merenje temperature",
+    "Snimanje ruke"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f8bce2b8a317759f4cd485"
+  },
+  "korisnicko_ime": "pera",
+  "lozinka": "Pera123!",
+  "ime": "Petar",
+  "prezime": "Jovanović",
+  "tip": "lekar",
+  "adresa": "Kralja Milana 78",
+  "kontakt_telefon": "060010010",
+  "email": "jeste@mejl.com",
+  "profilna": "1694022882299--small-profile.jpeg",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 78,
+  "specijalizacija": "Stomatologija",
+  "ogranak": "Mirijevo",
+  "vrste_pregleda": [
+    "Pregled",
+    "Čišćenje desni"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f8bddcb8a317759f4cd48b"
+  },
+  "korisnicko_ime": "marija",
+  "lozinka": "Marija12!",
+  "ime": "Marija",
+  "prezime": "Krstić",
+  "tip": "lekar",
+  "adresa": "Kralja Milana 409",
+  "kontakt_telefon": "2314678",
+  "email": "taj@mejl.rs",
+  "profilna": "1694291980700--download (1).png",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 409,
+  "specijalizacija": "Ortopedija",
+  "ogranak": "Stepojevac",
+  "vrste_pregleda": [
+    "Operacija kolena",
+    "Pregled nogu"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f8cc83b8a317759f4cd4e9"
+  },
+  "korisnicko_ime": "pacijent1",
+  "lozinka": "Pacijent1!",
+  "ime": "Nebojša",
+  "prezime": "Tuzlić",
+  "tip": "pacijent",
+  "adresa": "Kralja Milana 99",
+  "kontakt_telefon": "0692313131",
+  "email": "uros.stefanovic001@gmail.com",
+  "profilna": "1694287121239--download.png",
+  "stanje_registracije": "PRIHVACENO",
+  "vrste_pregleda": [],
+  "__v": 0,
+  "obavestenja": [
+    {
+      "tekst": "Imamo novu akciju! \nPopusti na svaki 5. pregled od 10%.",
+      "vreme": "2023-09-09T15:10:49.769Z",
+      "procitano": true
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje ruke\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-08T16:00:00.000Z",
+      "procitano": true
+    },
+    {
+      "tekst": "Otkazan vam je pregled: Snimanje grudi kod lekara: Mateja Matić. Lekar je dao kao razlog otkazivanja:\nEvo ti obrazlozenje.",
+      "vreme": "2023-09-09T16:00:31.198Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-18T16:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Merenje pulsa\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-19T14:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-20T07:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled grla\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-19T16:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje ruke\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-20T17:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Merenje temperature\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-21T17:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled\nKod lekara: Petar Jovanović.",
+      "vreme": "2023-09-20T18:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Čišćenje desni\nKod lekara: Petar Jovanović.",
+      "vreme": "2023-09-21T16:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled nogu\nKod lekara: Marija Krstić.",
+      "vreme": "2023-09-20T18:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-18T08:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-19T10:30:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Promenjena je cena pregleda: Snimanje grudi (Kardiologija) \nkoji ste zakazali kod lekara Mateja Matić u terminu: 9/21/2023, 9:00:00 AM\nNova cena je: 2899.99",
+      "vreme": "2023-09-19T02:18:59.454Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Promenjena je cena pregleda: Snimanje grudi (Kardiologija) \nkoji ste zakazali kod lekara Mateja Matić u terminu: 9/20/2023, 12:30:00 PM\nNova cena je: 2899.99",
+      "vreme": "2023-09-19T02:18:59.456Z",
+      "procitano": false
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64f8ccbab8a317759f4cd4ec"
+  },
+  "korisnicko_ime": "pacijent2",
+  "lozinka": "Pacijent2!",
+  "ime": "Marko",
+  "prezime": "Radivojević",
+  "tip": "pacijent",
+  "adresa": "Kralja Milana 55",
+  "kontakt_telefon": "0601111111",
+  "email": "su200019d@student.etf.bg.ac.rs",
+  "profilna": "1694026938640--download (1).png",
+  "stanje_registracije": "PRIHVACENO",
+  "vrste_pregleda": [],
+  "__v": 0,
+  "obavestenja": [
+    {
+      "tekst": "Imamo novu akciju! \nPopusti na svaki 5. pregled od 10%.",
+      "vreme": "2023-09-09T15:10:49.769Z",
+      "procitano": true
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-18T17:00:00.000Z",
+      "procitano": true
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje grudi\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-18T18:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Merenje pulsa\nKod lekara: Mateja Matić.",
+      "vreme": "2023-09-20T08:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Pregled grla\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-19T05:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Imate zakazan pregled za 24h.\nVrsta pregleda: Snimanje ruke\nKod lekara: Ana Petronijević.",
+      "vreme": "2023-09-21T08:00:00.000Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Promenjena je cena pregleda: Snimanje grudi (Kardiologija) \nkoji ste zakazali kod lekara Mateja Matić u terminu: 9/19/2023",
+      "vreme": "2023-09-19T02:13:24.951Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Promenjena je cena pregleda: Snimanje grudi (Kardiologija) \nkoji ste zakazali kod lekara Mateja Matić u terminu: 9/19/2023, 8:00:00 PM\nNova cena je: 1899.99",
+      "vreme": "2023-09-19T02:16:25.029Z",
+      "procitano": false
+    },
+    {
+      "tekst": "Promenjena je cena pregleda: Snimanje grudi (Kardiologija) \nkoji ste zakazali kod lekara Mateja Matić u terminu: 9/19/2023, 8:00:00 PM\nNova cena je: 2899.99",
+      "vreme": "2023-09-19T02:18:59.455Z",
+      "procitano": false
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64f8ccf6b8a317759f4cd4f3"
+  },
+  "korisnicko_ime": "nestolose",
+  "lozinka": "NestoLose123!",
+  "ime": "Nije dobro",
+  "prezime": "ni ovo nije",
+  "tip": "pacijent",
+  "adresa": "ta",
+  "kontakt_telefon": "767",
+  "email": "mhm@to.com",
+  "profilna": "podrazumevana_profilna_slika.png",
+  "stanje_registracije": "ODBIJENO",
+  "vrste_pregleda": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6503599ef3e65997ac7c7b37"
+  },
+  "korisnicko_ime": "anja",
+  "lozinka": "Anja123!",
+  "ime": "Anja",
+  "prezime": "Dobrojević",
+  "tip": "lekar",
+  "adresa": "Kralja Petra 44",
+  "kontakt_telefon": "066-1122333",
+  "email": "anja@gmail.com",
+  "profilna": "1694718366968--download (2).png",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 66,
+  "specijalizacija": "Pulmologija",
+  "ogranak": "Surčin",
+  "vrste_pregleda": [
+    "Pregled grudnog koša",
+    "Snimanje pluća"
+  ],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65035e8ef3e65997ac7c7b48"
+  },
+  "korisnicko_ime": "marko",
+  "lozinka": "Marko12!",
+  "ime": "Marko",
+  "prezime": "Darković",
+  "tip": "lekar",
+  "adresa": "Bulevar kralja Aleksandra 231",
+  "kontakt_telefon": "011-456789",
+  "email": "marko@hotmail.rs",
+  "profilna": "1694719630632--dogo.png",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 678,
+  "specijalizacija": "Dermatologija",
+  "ogranak": "Borča",
+  "vrste_pregleda": [
+    "Dermatološki pregled",
+    "Uklanjanje ožiljaka",
+    "Hemijski piling"
+  ],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65035f0df3e65997ac7c7b4b"
+  },
+  "korisnicko_ime": "luka",
+  "lozinka": "Luka123!",
+  "ime": "Luka",
+  "prezime": "Jovanović",
+  "tip": "lekar",
+  "adresa": "Bulevar kralja Aleksandra 232",
+  "kontakt_telefon": "069-21-32-888",
+  "email": "lukaluka@yahoo.com",
+  "profilna": "podrazumevana_profilna_slika.png",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 987,
+  "specijalizacija": "Psihijatrija",
+  "ogranak": "Železnik",
+  "vrste_pregleda": [
+    "Razgovor",
+    "Psihoterapija"
+  ],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6503605ef3e65997ac7c7b56"
+  },
+  "korisnicko_ime": "mira",
+  "lozinka": "Mira123!",
+  "ime": "Mira",
+  "prezime": "Popović",
+  "tip": "lekar",
+  "adresa": "Požeška 11",
+  "kontakt_telefon": "011-11-22-333",
+  "email": "mira@gmail.com",
+  "profilna": "podrazumevana_profilna_slika.png",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 964,
+  "specijalizacija": "Pedijatrija",
+  "ogranak": "Banjica",
+  "vrste_pregleda": [
+    "Pregled grla",
+    "Snimanje ruke"
+  ],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6503617df3e65997ac7c7b5d"
+  },
+  "korisnicko_ime": "milutin",
+  "lozinka": "Milutin1!",
+  "ime": "Milutin",
+  "prezime": "Babić",
+  "tip": "lekar",
+  "adresa": "Požeška 66",
+  "kontakt_telefon": "011-2345678",
+  "email": "mile@gmail.rs",
+  "profilna": "1694720381526--goomba.jpg",
+  "stanje_registracije": "PRIHVACENO",
+  "broj_lekarske_licence": 98,
+  "specijalizacija": "Kardiologija",
+  "ogranak": "Kaluđerica",
+  "vrste_pregleda": [
+    "Snimanje grudi",
+    "Pregled krvnih sudova",
+    "Pregled grudi"
+  ],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "650361f4f3e65997ac7c7b68"
+  },
+  "korisnicko_ime": "pacijent3",
+  "lozinka": "Pacijent3!",
+  "ime": "Marko",
+  "prezime": "Markić",
+  "tip": "pacijent",
+  "adresa": "Požeška 55",
+  "kontakt_telefon": "011-9876543",
+  "email": "marko@hotmail.com",
+  "profilna": "podrazumevana_profilna_slika.png",
+  "stanje_registracije": "CEKANJE",
+  "vrste_pregleda": [],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65036263f3e65997ac7c7b6b"
+  },
+  "korisnicko_ime": "pacijent4",
+  "lozinka": "Pacijent4!",
+  "ime": "Nađa",
+  "prezime": "Nađić",
+  "tip": "pacijent",
+  "adresa": "Bulevar kralja Aleksandra 123",
+  "kontakt_telefon": "069-96699669",
+  "email": "nadja@gmail.com",
+  "profilna": "1694720611680--earbuds.jpg",
+  "stanje_registracije": "CEKANJE",
+  "vrste_pregleda": [],
+  "obavestenja": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65036332f3e65997ac7c7b6e"
+  },
+  "korisnicko_ime": "pacijent5",
+  "lozinka": "Pacijent5!",
+  "ime": "Una",
+  "prezime": "Nunić",
+  "tip": "pacijent",
+  "adresa": "Kralja Petra 1",
+  "kontakt_telefon": "0114567891",
+  "email": "una@gmail.rs",
+  "profilna": "podrazumevana_profilna_slika.png",
+  "stanje_registracije": "CEKANJE",
+  "vrste_pregleda": [],
+  "obavestenja": [],
+  "__v": 0
+}]
