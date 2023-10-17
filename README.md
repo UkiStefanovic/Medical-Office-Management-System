@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-The Medical Office Management System is a student project web application I created in my third year of studies. It is designed for the efficient management of a doctor's office. It includes features for patient management, appointment scheduling, and record-keeping. The project was built using the MEAN (MongoDB, Express, Angular, Node.js) stack and it contains approximately 20 HTML pages with various components.
+The Medical Office Management System is a student project web application I created in my third year of studies. It is designed for the efficient management of a doctor's office. It includes features for patient management, appointment scheduling, and record-keeping. The project was built using the MEAN (MongoDB, Express, Angular, Node.js) stack and it contains approximately 20 HTML pages with various components. Throughout the project I used the Bootstrap framework, because it 
+focuses on functionality more than appearence.
 
 ## Features
 
