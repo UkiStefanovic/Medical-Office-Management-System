@@ -1,0 +1,14 @@
+#footer{
+    height:24px;
+    width: 100%;
+    background-color: springgreen;
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    left: 0pt;
+}
+#footer-tekst{
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}

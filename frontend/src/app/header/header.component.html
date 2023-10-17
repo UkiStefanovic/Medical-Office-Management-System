@@ -1,0 +1,154 @@
+<div id="app-header" style="background-color: springgreen; padding: 20px;">
+    <h1>Lekarska ordinacija</h1>
+</div>
+<nav class="navbar bg-body-tertiary" *ngIf="tipKorisnika()==null">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Neregistrovan korisnik</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href=''>Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='login'>Prijavite se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='registracijaPacijenta'>Registracija pacijenta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="navbar bg-body-tertiary" *ngIf="tipKorisnika()=='menadzer'">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menadžer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href='menadzer'>Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='menadzer/dodajLekara'>Dodaj novog lekara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='menadzer/zahteviVrstePregleda'>Zahtevi za vrste pregleda od lekara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='menadzer/dodajSpecijalizaciju'>Dodaj specijalizaciju</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='menadzer/preglediJedneSpecijalizacije'>Pregledi jedne
+                            specijalizacije</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='menadzer/novaPromocija'>Nova promocija/akcija</a>
+                    </li>
+
+                    <hr>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href='promenaLozinke'>Promena lozinke</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='login' (click)="izloguj()">Izloguj se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="navbar bg-body-tertiary" *ngIf="tipKorisnika()=='lekar'">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Lekar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href='lekar'>Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='lekar/pregledi'>Pregledi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='lekar/razno'>Razno</a>
+                    </li>
+
+                    <hr>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href='promenaLozinke'>Promena lozinke</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='login' (click)="izloguj()">Izloguj se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="navbar bg-body-tertiary" *ngIf="tipKorisnika()=='pacijent'">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Pacijent</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href='pacijent'>Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='pacijent/lekari'>Lekari</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='pacijent/pregledi'>Pregledi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='pacijent/obavestenja'>Obaveštenja</a>
+                    </li>
+
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link" href='promenaLozinke'>Promena lozinke</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='login' (click)="izloguj()">Izloguj se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
