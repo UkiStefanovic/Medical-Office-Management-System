@@ -1,0 +1,198 @@
+[{
+  "_id": {
+    "$oid": "64fa4e29b117eadd2d7cfc92"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent2",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "vreme": {
+    "$date": "2023-09-07T21:00:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-22T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Bol u grudima",
+  "dijagnoza": "Upala",
+  "preporucena_terapija": "Piti antibiotik",
+  "__v": 0,
+  "specijalizacija": "Kardiologija"
+},
+{
+  "_id": {
+    "$oid": "64fc999192a2332b58f6c2a6"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent1",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "specijalizacija": "Kardiologija",
+  "vreme": {
+    "$date": "2023-09-08T08:00:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-25T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Visok pritisak",
+  "dijagnoza": "Hipertenzija",
+  "preporucena_terapija": "bromazepam",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64fc99b392a2332b58f6c2aa"
+  },
+  "lekar": "mateja",
+  "pacijent": "pacijent2",
+  "imeLekara": "Mateja",
+  "prezimeLekara": "Matić",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "specijalizacija": "Kardiologija",
+  "vreme": {
+    "$date": "2023-09-09T11:25:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-16T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Rana na grudima",
+  "dijagnoza": "Nema",
+  "preporucena_terapija": "Odmarati",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64fc99eb92a2332b58f6c2b8"
+  },
+  "lekar": "pera",
+  "pacijent": "pacijent2",
+  "imeLekara": "Petar",
+  "prezimeLekara": "Jovanović",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "specijalizacija": "Stomatologija",
+  "vreme": {
+    "$date": "2023-09-07T19:00:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-13T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Bol u zubu",
+  "dijagnoza": "Karijes",
+  "preporucena_terapija": "Vadimo zub",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64fc9a0692a2332b58f6c2bc"
+  },
+  "lekar": "pera",
+  "pacijent": "pacijent1",
+  "imeLekara": "Petar",
+  "prezimeLekara": "Jovanović",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "specijalizacija": "Stomatologija",
+  "vreme": {
+    "$date": "2023-09-09T12:30:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-20T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Bol u zubu",
+  "dijagnoza": "Zub ispada",
+  "preporucena_terapija": "Vadjenje zuba",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65039d94f3e65997ac7c7c96"
+  },
+  "lekar": "marija",
+  "pacijent": "pacijent1",
+  "imeLekara": "Marija",
+  "prezimeLekara": "Krstović",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "specijalizacija": "Ortopedija",
+  "vreme": {
+    "$date": "2023-09-08T10:00:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-11-20T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Sportska povreda",
+  "dijagnoza": "Prelom kolena",
+  "preporucena_terapija": "Odmarati naredna 3 meseca",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65039dd0f3e65997ac7c7c9c"
+  },
+  "lekar": "marija",
+  "pacijent": "pacijent1",
+  "imeLekara": "Marija",
+  "prezimeLekara": "Krstović",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "specijalizacija": "Ortopedija",
+  "vreme": {
+    "$date": "2023-09-08T19:30:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-11-25T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Lom gipsa",
+  "dijagnoza": "Nista",
+  "preporucena_terapija": "Nastaviti odmaranje",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65039e5cf3e65997ac7c7cb2"
+  },
+  "lekar": "ana",
+  "pacijent": "pacijent1",
+  "imeLekara": "Ana",
+  "prezimeLekara": "Petronijević",
+  "imePacijenta": "Nebojša",
+  "prezimePacijenta": "Tuzlić",
+  "specijalizacija": "Pedijatrija",
+  "vreme": {
+    "$date": "2023-09-09T16:00:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-11-25T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Imao operaciju kolena",
+  "dijagnoza": "Hipohondar",
+  "preporucena_terapija": "Odmarati posle operacije",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6508a06ad4faeab884dc52ae"
+  },
+  "lekar": "pera",
+  "pacijent": "pacijent2",
+  "imeLekara": "Petar",
+  "prezimeLekara": "Jovanović",
+  "imePacijenta": "Marko",
+  "prezimePacijenta": "Radivojević",
+  "specijalizacija": "Stomatologija",
+  "vreme": {
+    "$date": "2023-09-10T11:45:00.000Z"
+  },
+  "datum_kontrole": {
+    "$date": "2023-09-20T00:00:00.000Z"
+  },
+  "razlog_dolaska": "Bol u zubu",
+  "dijagnoza": "Karijes",
+  "preporucena_terapija": "Da se ugradi plomba",
+  "__v": 0
+}]
