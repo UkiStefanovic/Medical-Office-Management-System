@@ -23,6 +23,7 @@ focuses on functionality more than appearence.
 - **Backend:**
   - Node.js
   - Express.js
+  - Typescript
 
 - **Database:**
   - MongoDB
