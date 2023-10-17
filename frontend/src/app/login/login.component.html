@@ -1,0 +1,34 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" routerLink="" (click)="povratak()">Povratak na početnu</button>
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Prijava za pacijente i lekare</h3>
+    </div>
+    <div class="row d-flex justify-content-center" id="login-forma">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="kor_ime_unos" class="form-label">Korisničko ime:</label>
+                <input type="text" id="kor_ime_unos" class="form-control" [(ngModel)]="korisnicko_ime">
+            </div>
+            <div class="mb-3">
+                <label for="lozinka_unos" class="form-label">Lozinka:</label>
+                <input type="password" class="form-control" id="lozinka_unos" [(ngModel)]="lozinka">
+            </div>
+            <button class="btn btn-primary" (click)="login()">Prijavi se</button>
+            <br>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+            <div class="mb-3">
+                Ukoliko Ste menadžer, možete se ulogovati na sledećem <a routerLink="loginMenadzer"
+                    (click)="goTo()">linku.</a>
+            </div>
+        </div>
+    </div>
+</div>

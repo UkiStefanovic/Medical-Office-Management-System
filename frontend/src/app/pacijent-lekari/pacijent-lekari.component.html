@@ -1,0 +1,109 @@
+<br>
+<div class="container-fluid" id="all_content">
+    <div id="tabela_lekara">
+        <h2>Svi lekari u ordinaciji</h2>
+        <br>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Profilna slika</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Specijalizacija</th>
+                        <th>Ogranak</th>
+                        <th>Profil</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let lekar of lekari">
+                        <td>
+                            <img src="http://localhost:4000/uploads/{{lekar.profilna}}" class="profile-image"
+                                style="width: 100px; height: 100px;">
+                        </td>
+                        <td>{{lekar.ime}}</td>
+                        <td>{{lekar.prezime}}</td>
+                        <td>{{lekar.specijalizacija}}</td>
+                        <td>{{lekar.ogranak}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="profil(lekar)">Profil</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container-fluid" id="pretraga_i_sortiranje">
+            <div class="row">
+                <div class="col justify-content-center" id="pretraga">
+                    <h4>Pretražite po poljima:</h4>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="ime_pretraga" class="form-label">Ime:</label>
+                                <input type="text" class="form-control" id="ime_pretraga" [(ngModel)]="ime_pretraga">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="prezime_pretraga" class="form-label">Prezime:</label>
+                                <input type="text" class="form-control" id="prezime_pretraga"
+                                    [(ngModel)]="prezime_pretraga">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="specijalizacija_pretraga">Specijalizacija:</label>
+                                <select id="specijalizacija_pretraga" [(ngModel)]="specijalizacija_pretraga"
+                                    class="form-select">
+                                    <option *ngFor="let s of sveSpecijalizacije" value="{{s.naziv}}">{{s.naziv}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="prezime_pretraga" class="form-label">Ogranak:</label>
+                                <input type="text" class="form-control" id="prezime_pretraga"
+                                    [(ngModel)]="ogranak_pretraga">
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" (click)="pretraga()">Pretražite</button>
+                    </div>
+                </div>
+                <div class="col justify-content-center">
+                    <h4>Sortirajte tabelu</h4>
+                    <br>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary" (click)="sortIme()">Sortirati po imenu</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary" (click)="sortPrezime()">Sortirati po prezimenu</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary" (click)="sortSpecijalizacija()">Sortirati po
+                                    specijalizaciji</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary" (click)="sortOgranak()">Sortirati po ogranku</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

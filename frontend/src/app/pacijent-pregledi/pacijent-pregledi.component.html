@@ -1,0 +1,75 @@
+<br>
+<div class="container-fluid" id="all_content">
+    <div id="tabela_pregleda">
+        <h2>Vaši zakazani pregledi</h2>
+        <br>
+        <div *ngIf="!(pregledi.length>0)" class="col-md-5">
+            Nemate zakazane preglede
+        </div>
+        <div class="table-responsive" *ngIf="pregledi.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Vrsta pregleda</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Ogranak</th>
+                        <th>Lekar</th>
+                        <th>Otkazati</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let pregled of pregledi">
+                        <td>{{pregled.naziv}}</td>
+                        <td>{{pregled.vreme | date:'dd-MM-yyyy'}}</td>
+                        <td>{{pregled.vreme | date:'hh-mm a'}}</td>
+                        <td>{{pregled.ogranak}}</td>
+                        <td>{{pregled.imeLekara}} {{pregled.prezimeLekara}}</td>
+                        <th>
+                            <button class="btn btn-danger" (click)="otkazati(pregled)">Otkazati</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div id="tabela_izvestaja">
+        <h2>
+            Izveštaji za Vaše prethodne preglede &nbsp;
+            <button class="btn btn-primary" (click)="export()">Eksportovati</button>
+        </h2>  
+        <br>
+        <div *ngIf="!(izvestaji.length>0)" class="col-md-5">
+            Nemate izveštaje.
+        </div>
+        <div class="table-responsive" *ngIf="izvestaji.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Lekar</th>
+                        <th>Specijalizacija</th>
+                        <th>Razlog dolaska</th>
+                        <th>Dijagnoza</th>
+                        <th>Preporučena terapija</th>
+                        <th>Preporučen dan kontrole</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let izvestaj of izvestaji">
+                        <td>{{izvestaj.vreme | date:'dd-MM-yyyy'}}</td>
+                        <td>{{izvestaj.vreme | date:'hh-mm a'}}</td>
+                        <td>{{izvestaj.imeLekara}} {{izvestaj.prezimeLekara}}</td>
+                        <td>{{izvestaj.specijalizacija}}</td>
+                        <td>{{izvestaj.razlog_dolaska}}</td>
+                        <td>{{izvestaj.dijagnoza}}</td>
+                        <td>{{izvestaj.preporucena_terapija}}</td>
+                        <td>{{izvestaj.datum_kontrole | date:'dd-MM-yyyy'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button> &nbsp;
+            <button class="btn btn-primary" (click)="izloguj()">Izloguj se</button> 
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Promena lozinke</h3>
+    </div>
+    <div class="row d-flex justify-content-center" id="login-forma">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="prethodna_lozinka_unos" class="form-label">Prethodna lozinka:</label>
+                <input type="password" id="prethodna_lozinka_unos" class="form-control" [(ngModel)]="prethodna_lozinka">
+            </div>
+            <div class="mb-3">
+                <label for="nova_lozinka_unos" class="form-label">Nova lozinka:</label>
+                <input type="password" class="form-control" id="nova_lozinka_unos" [(ngModel)]="nova_lozinka">
+            </div>
+            <div class="mb-3">
+                <label for="nova_lozinka_ponovo_unos" class="form-label">Nova lozinka ponovo:</label>
+                <input type="password" class="form-control" id="nova_lozinka_ponovo_unos" [(ngModel)]="nova_lozinka_ponovo">
+            </div>
+            <button class="btn btn-primary" (click)="promenaLozinke()">Promeni lozinku</button>
+            <br>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+        </div>
+    </div>
+</div>

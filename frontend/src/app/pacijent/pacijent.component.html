@@ -1,0 +1,96 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <h2 style="text-align: center;">Profil</h2>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <img src="http://localhost:4000/uploads/{{profilna()}}" class="profile-image" style="width: 200px;">
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Ime</td>
+                            <td>{{ulogovani_pacijent.ime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Prezime</td>
+                            <td>{{ulogovani_pacijent.prezime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresa</td>
+                            <td>{{ulogovani_pacijent.adresa}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{ulogovani_pacijent.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kontakt telefon</td>
+                            <td>{{ulogovani_pacijent.kontakt_telefon}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="text-center" *ngIf="!azuriraSe">
+                <button class="btn btn-primary" (click)="azurirajProfil()">Ažuriraj</button>
+            </div>
+            <div *ngIf="azuriraSe">
+                <div class="mb-3">
+                    <h5 style="text-align: center;">Ažuriranje profila</h5>
+                </div>
+                <div class="mb-3">
+                    <label for="ime_azuriranje_unos" class="form-label">Ažuriraj ime:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="ime_bool">
+                    <input type="text" id="ime_azuriranje_unos" class="form-control" 
+                        [(ngModel)]="ime_azuriranje" [disabled]="!ime_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="prezime_azuriranje_unos" class="form-label">Ažuriraj prezime:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="prezime_bool">
+                    <input type="text" id="prezime_azuriranje_unos" class="form-control"
+                        [(ngModel)]="prezime_azuriranje" [disabled]="!prezime_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="adresa_azuriranje_unos" class="form-label">Ažuriraj adresa:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="adresa_bool">
+                    <input type="text" id="adresa_azuriranje_unos" class="form-control"
+                        [(ngModel)]="adresa_azuriranje" [disabled]="!adresa_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="email_azuriranje_unos" class="form-label">Ažuriraj email:</label>&nbsp;
+                    <input type="checkbox" [(ngModel)]="email_bool">
+                    <input type="text" id="email_azuriranje_unos" class="form-control"
+                        [(ngModel)]="email_azuriranje" [disabled]="!email_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="kontakt_telefon_azuriranje_unos" class="form-label">Ažuriraj kontakt telefon:</label>&nbsp;
+                    <input type="checkbox" [(ngModel)]="kontakt_bool">
+                    <input type="text" id="kontakt_telefon_azuriranje_unos" class="form-control"
+                        [(ngModel)]="kontakt_telefon_azuriranje" [disabled]="!kontakt_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="slika_azuriranje_unos" class="form-label">Ažuriraj profilnu sliku:</label><br>
+                    <input type="file" id="slika_azuriranje_unos" (change)="izabranFajl($event)"><br>
+                    Izabrani fajl: {{fileName || "Niste uneli fajl."}}<br>
+                    Ako ne izaberete fajl, neće se ažurirati profilna. <br>
+                    <div class="mb-3" style="font: bold; color: orangered;">
+                        {{file_error_message}}
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="azuriraj()">Ažuriraj</button> &nbsp;
+                <button class="btn btn-warning" (click)="odustaoAzuriranje()">Odustani</button>
+                <br>
+                <div class="mb-3" style="font: bold; color: red;">
+                    {{error_message}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

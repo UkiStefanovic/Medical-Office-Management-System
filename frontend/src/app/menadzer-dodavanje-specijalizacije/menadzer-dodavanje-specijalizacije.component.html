@@ -1,0 +1,30 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button> &nbsp;
+            <button class="btn btn-primary" (click)="izloguj()">Izloguj se</button> 
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Dodavanje nove specijalizacije</h3>
+    </div>
+    <div class="row d-flex justify-content-center" id="login-forma">
+        <div class="col-md-5">
+
+            <div class="mb-3">
+                <label for="naziv_unos" class="form-label">Naziv specijalizacije:</label>
+                <input type="text" id="naziv_unos" class="form-control" [(ngModel)]="naziv_specijalizacije">
+            </div>
+
+            <button class="btn btn-primary" (click)="dodajSpecijalizaciju()">Dodajte</button>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>

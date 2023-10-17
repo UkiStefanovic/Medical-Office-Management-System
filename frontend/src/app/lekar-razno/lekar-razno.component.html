@@ -1,0 +1,35 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button> &nbsp;
+            <button class="btn btn-primary" (click)="izloguj()">Izloguj se</button>
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Zahtev za novu vrstu pregleda</h3>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="naziv_unos" class="form-label">Naziv:</label>
+                <input type="text" id="naziv_unos" class="form-control" [(ngModel)]="naziv">
+            </div>
+            <div class="mb-3">
+                <label for="trajanje_unos" class="form-label">Trajanje:</label>
+                <input type="number" id="trajanje_unos" class="form-control" [(ngModel)]="trajanje">
+            </div>
+            <div class="mb-3">
+                <label for="cena_unos" class="form-label">Cena:</label>
+                <input type="text" id="cena_unos" class="form-control" [(ngModel)]="cena">
+            </div>
+            <button class="btn btn-primary" (click)="posaljiZahtev()">Pošalji zahtev</button>
+            <br>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+        </div>
+    </div>
+</div>

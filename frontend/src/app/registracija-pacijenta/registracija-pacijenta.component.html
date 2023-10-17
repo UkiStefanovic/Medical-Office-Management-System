@@ -1,0 +1,63 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button>
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Registracija novog pacijenta</h3>
+    </div>
+    <div class="row d-flex justify-content-center" id="login-forma">
+
+        <div class="col-md-5">
+
+            <div class="mb-3">
+                <label for="kor_ime_unos" class="form-label">Korisničko ime:</label>
+                <input type="text" id="kor_ime_unos" class="form-control" [(ngModel)]="korisnicko_ime">
+            </div>
+            <div class="mb-3">
+                <label for="lozinka_unos" class="form-label">Lozinka:</label>
+                <input type="password" class="form-control" id="lozinka_unos" [(ngModel)]="lozinka">
+            </div>
+            <div class="mb-3">
+                <label for="ime_unos" class="form-label">Ime:</label>
+                <input type="text" class="form-control" id="ime_unos" [(ngModel)]="ime">
+            </div>
+            <div class="mb-3">
+                <label for="prezime_unos" class="form-label">Prezime:</label>
+                <input type="text" class="form-control" id="prezime_unos" [(ngModel)]="prezime">
+            </div>
+            <div class="mb-3">
+                <label for="adresa_unos" class="form-label">Adresa:</label>
+                <input type="text" class="form-control" id="adresa_unos" [(ngModel)]="adresa">
+            </div>
+            <div class="mb-3">
+                <label for="kontakt_telefon_unos" class="form-label">Kontakt telefon:</label>
+                <input type="tel" class="form-control" id="kontakt_telefon_unos" [(ngModel)]="kontakt_telefon">
+            </div>
+            <div class="mb-3">
+                <label for="email_unos" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email_unos" [(ngModel)]="email">
+            </div>
+            <br>
+            <div class="mb-3">
+                <label for="slika_unos" class="form-label">Profilna slika (opciono):</label><br>
+                <input type="file" id="slika_unos" (change)="izabranFajl($event)"><br>
+                Izabrani fajl: {{fileName || "Niste uneli fajl."}}<br>
+                <div class="mb-3" style="font: bold; color: orangered;">
+                    {{file_error_message}}
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="registracija()">Registruj se</button>
+
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

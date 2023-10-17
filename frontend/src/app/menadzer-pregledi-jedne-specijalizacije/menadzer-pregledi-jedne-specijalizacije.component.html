@@ -1,0 +1,113 @@
+<div class="container-fluid" id="all-content">
+    <br>
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button> &nbsp;
+            <button class="btn btn-primary" (click)="izloguj()">Izloguj se</button> 
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center" id="naslov_stranice">
+        <h3 style="text-align: center;">Vrste pregleda za odabranu specijalizaciju</h3>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="row d-flex justify-content-center">
+                <label for="specijalizacija_odabir" class="form-label">Odaberite specijalizaciju:</label>
+                <select [(ngModel)]="odabrana_specijalizacija" class="form-select" (change)="odabirSpecijalizacije()">
+                    <option *ngFor="let s of sveSpecijalizacije" value="{{s.naziv}}">{{s.naziv}}</option>
+                </select>
+            </div>
+            <br>
+            <div *ngIf="!(vrstePregleda.length>0)" class="col-md-7">
+                Niste odabrali specijalizaciju ili za ovu specijalizaciju nema vrsti pregleda
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table" *ngIf="vrstePregleda.length>0">
+                    <thead class="thead-dark table-group-divider">
+                        <tr>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Trajanje </th>
+                            <th scope="col">Cena</th>
+                            <th scope="col">Ažurirati</th>
+                            <th scope="col">Obrisati</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let vrstaPregleda of vrstePregleda">
+                            <td>{{vrstaPregleda.naziv}}</td>
+                            <td>{{vrstaPregleda.trajanje}}</td>
+                            <td>{{vrstaPregleda.cena}}</td>
+                            <td>
+                                <div>
+                                    <button (click)="azuriranje(vrstaPregleda)"
+                                        class="btn btn-success">Azuriraj</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button (click)="obrisi(vrstaPregleda)" class="btn btn-danger">Obrisi</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div *ngIf="azuriraSe">
+                <div class="mb-3">
+                    <h5 style="text-align: center;">Ažuriranje vrste pregleda: {{pregledKojiSeAzurira.naziv}}</h5>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="naziv_azuriranje_unos" class="form-label">Nov naziv:</label>
+                    <input type="text" id="naziv_azuriranje_unos" class="form-control"
+                        [(ngModel)]="naziv_pregleda_azuriranje">
+                </div> -->
+                <div class="mb-3">
+                    <label for="trajanje_azuriranje_unos" class="form-label">Novo trajanje:</label>
+                    <input type="number" id="trajanje_azuriranje_unos" class="form-control"
+                        [(ngModel)]="trajanje_pregleda_azuriranje">
+                </div>
+                <div class="mb-3">
+                    <label for="cena_azuriranje_unos" class="form-label">Nova cena:</label>
+                    <input type="text" id="cena_azuriranje_unos" class="form-control"
+                        [(ngModel)]="cena_pregleda_azuriranje">
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="azuriraj()">Ažuriraj</button> &nbsp;
+                <button class="btn btn-warning" (click)="odustaoAzuriranje()">Odustani</button>
+                <br>
+                <div class="mb-3" style="font: bold; color: red;">
+                    {{error_message}}
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="justify-content-center" *ngIf="odabrana_specijalizacija">
+                <div class="mb-3">
+                    <h5 style="text-align: center;">Dodajte novu vrstu pregleda</h5>
+                </div>
+                <div class="mb-3">
+                    <label for="naziv_unos" class="form-label">Naziv:</label>
+                    <input type="text" id="naziv_unos" class="form-control" [(ngModel)]="naziv_unos">
+                </div>
+                <div class="mb-3">
+                    <label for="trajanje_unos" class="form-label">Trajanje:</label>
+                    <input type="number" id="trajanje_unos" class="form-control" [(ngModel)]="trajanje_unos">
+                </div>
+                <div class="mb-3">
+                    <label for="cena_unos" class="form-label">Cena:</label>
+                    <input type="text" id="cena_unos" class="form-control" [(ngModel)]="cena_unos">
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="dodaj()">Dodaj</button>
+                <br>
+                <div class="mb-3" style="font: bold; color: red;">
+                    {{error_message_dodaj}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

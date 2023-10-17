@@ -1,0 +1,161 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <br>
+    <div class="row d-flex justify-content-center" id="naslov_stranice">
+        <h2 style="text-align: center;">Profil</h2>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="row d-flex justify-content-center">
+                <img src="http://localhost:4000/uploads/{{profilna()}}" class="profile-image" style="width: 200px;">
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Ime</td>
+                            <td>{{ulogovani_lekar.ime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Prezime</td>
+                            <td>{{ulogovani_lekar.prezime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresa</td>
+                            <td>{{ulogovani_lekar.adresa}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{ulogovani_lekar.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kontakt telefon</td>
+                            <td>{{ulogovani_lekar.kontakt_telefon}}</td>
+                        </tr>
+                        <tr>
+                            <td>Broj licence</td>
+                            <td>{{ulogovani_lekar.broj_lekarske_licence}}</td>
+                        </tr>
+                        <tr>
+                            <td>Specijalizacija</td>
+                            <td>{{ulogovani_lekar.specijalizacija}}</td>
+                        </tr>
+                        <tr>
+                            <td>Ogranak</td>
+                            <td>{{ulogovani_lekar.ogranak}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center" *ngIf="!azuriraSe">
+                <button class="btn btn-primary" (click)="azurirajProfil()">Ažuriraj</button>
+            </div>
+            <br>
+            <div *ngIf="azuriraSe">
+                <div class="mb-3">
+                    <h5 style="text-align: center;">Ažuriranje profila</h5>
+                </div>
+                <div class="mb-3">
+                    <label for="ime_azuriranje_unos" class="form-label">Ažuriraj ime:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="ime_bool">
+                    <input type="text" id="ime_azuriranje_unos" class="form-control" [(ngModel)]="ime_azuriranje"
+                        [disabled]="!ime_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="prezime_azuriranje_unos" class="form-label">Ažuriraj prezime:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="prezime_bool">
+                    <input type="text" id="prezime_azuriranje_unos" class="form-control"
+                        [(ngModel)]="prezime_azuriranje" [disabled]="!prezime_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="adresa_azuriranje_unos" class="form-label">Ažuriraj adresa:</label> &nbsp;
+                    <input type="checkbox" [(ngModel)]="adresa_bool">
+                    <input type="text" id="adresa_azuriranje_unos" class="form-control" [(ngModel)]="adresa_azuriranje"
+                        [disabled]="!adresa_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="kontakt_telefon_azuriranje_unos" class="form-label">Ažuriraj kontakt
+                        telefon:</label>&nbsp;
+                    <input type="checkbox" [(ngModel)]="kontakt_bool">
+                    <input type="text" id="kontakt_telefon_azuriranje_unos" class="form-control"
+                        [(ngModel)]="kontakt_telefon_azuriranje" [disabled]="!kontakt_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="broj_lekarske_licence_azuriranje_unos" class="form-label">Ažuriraj broj lekarske
+                        licence:</label>&nbsp;
+                    <input type="checkbox" [(ngModel)]="br_licence_bool">
+                    <input type="number" id="broj_lekarske_licence_azuriranje_unos" class="form-control"
+                        [(ngModel)]="broj_lekarske_licence_azuriranje" [disabled]="!br_licence_bool">
+                </div>
+                <div class="mb-3">
+                    <label for="specijalizacija_azuriranje_unos" class="form-label">Ažuriraj
+                        specijalizaciju:</label>&nbsp;
+                    <input type="checkbox" [(ngModel)]="specijalizacija_bool">
+                    <select id="specijalizacija_azuriranje_unos" [(ngModel)]="specijalizacija_azuriranje"
+                        class="form-select" [disabled]="!specijalizacija_bool">
+                        <option *ngFor="let s of sveSpecijalizacije" value="{{s.naziv}}">{{s.naziv}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="slika_azuriranje_unos" class="form-label">Ažuriraj profilnu sliku:</label><br>
+                    <input type="file" id="slika_azuriranje_unos" (change)="izabranFajl($event)"><br>
+                    Izabrani fajl: {{fileName || "Niste uneli fajl."}}<br>
+                    Ako ne izaberete fajl, neće se ažurirati profilna. <br>
+                    <div class="mb-3" style="font: bold; color: orangered;">
+                        {{file_error_message}}
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="azuriraj()">Ažuriraj</button> &nbsp;
+                <button class="btn btn-warning" (click)="odustaoAzuriranje()">Odustani</button>
+                <br>
+                <div class="mb-3" style="font: bold; color: red;">
+                    {{error_message}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row d-flex justify-content-center" id="naslov_stranice">
+        <h2 style="text-align: center;">Pregledi koje obavljate: </h2>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark table-group-divider">
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Trajanje</th>
+                            <th>Cena</th>
+                            <th>Izbor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let pregled of vrste_pregleda">
+                            <td>
+                                {{pregled.naziv}}
+                            </td>
+                            <td>{{pregled.trajanje}}</td>
+                            <td>{{pregled.cena}}</td>
+                            <td>
+                                <button *ngIf="obavlja(pregled.naziv)" class="btn btn-danger"
+                                    (click)="ukloni(pregled)">Uklonite</button>
+                                <button *ngIf="!obavlja(pregled.naziv)" class="btn btn-success"
+                                    (click)="dodaj(pregled)">Dodajte</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

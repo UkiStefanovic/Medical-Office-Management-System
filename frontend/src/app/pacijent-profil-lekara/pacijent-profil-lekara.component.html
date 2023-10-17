@@ -1,0 +1,130 @@
+<br>
+<div class="container-fluid" id="all_content">
+    <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pregled lekara</button>
+        </div>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center" id="naslov_stranice">
+        <h2 style="text-align: center;">Profil izabranog lekara</h2>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="row d-flex justify-content-center">
+                <img src="http://localhost:4000/uploads/{{profilna()}}" class="profile-image" style="width: 200px;">
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Ime</td>
+                            <td>{{izabrani_lekar.ime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Prezime</td>
+                            <td>{{izabrani_lekar.prezime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresa</td>
+                            <td>{{izabrani_lekar.adresa}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{izabrani_lekar.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kontakt telefon</td>
+                            <td>{{izabrani_lekar.kontakt_telefon}}</td>
+                        </tr>
+                        <tr>
+                            <td>Broj licence</td>
+                            <td>{{izabrani_lekar.broj_lekarske_licence}}</td>
+                        </tr>
+                        <tr>
+                            <td>Specijalizacija</td>
+                            <td>{{izabrani_lekar.specijalizacija}}</td>
+                        </tr>
+                        <tr>
+                            <td>Ogranak</td>
+                            <td>{{izabrani_lekar.ogranak}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <div class="row d-flex justify-content-center" id="naslov_stranice">
+        <h2 style="text-align: center;">Pregledi koje obavlja izabrani lekar: </h2>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark table-group-divider">
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Trajanje</th>
+                            <th>Cena</th>
+                            <th>Zakazati</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let pregled of vrste_pregleda">
+                            <td>
+                                {{pregled.naziv}}
+                            </td>
+                            <td>{{pregled.trajanje}}</td>
+                            <td>{{pregled.cena}}</td>
+                            <td>
+                                <button class="btn btn-primary" (click)="zakaziPregled(pregled)">Zakažite</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div *ngIf="zakazivanje">
+                <div class="row d-flex justify-content-center">
+                    <h2 style="text-align: center;">Zakažite pregled: {{pregled_zakazivanje.naziv}}</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="datum_zakazivanje" class="form-label">Datum:</label>
+                    <input type="date" id="datum_zakazivanje" class="form-control" [(ngModel)]="datum_zakazivanje">
+                </div>
+                <div class="mb-3">
+                    <label for="vreme_zakazivanje" class="form-label">Vreme:</label>
+                    <input type="time" id="vreme_zakazivanje" class="form-control" [(ngModel)]="vreme_zakazivanje">
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="zakazati()">Zakazati</button> &nbsp;
+                <button class="btn btn-warning" (click)="odustaoZakazivanje()">Odustani</button>
+                <br>
+                <br>
+                <div class="mb-3" style="font: bold; color: red;">
+                    {{error_message}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</div>

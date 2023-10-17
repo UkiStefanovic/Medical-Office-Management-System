@@ -1,0 +1,159 @@
+<br>
+<div class="container-fluid" id="all_content">
+    <div id="naredna_tri_pregleda">
+        <h2>Naredna tri vaša pregleda</h2>
+        <br>
+        <div *ngIf="!(pregledi.length>0)" class="col-md-5">
+            Nemate preglede zakazane kod vas.
+        </div>
+        <div class="table-responsive" *ngIf="pregledi.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Vrsta pregleda</th>
+                        <th>Pacijent</th>
+                        <th>Karton pacijenta</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Otkazati</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let pregled of pregledi">
+                        <td>{{pregled.naziv}}</td>
+                        <td>{{pregled.imePacijenta}} {{pregled.prezimePacijenta}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="karton(pregled.pacijent)">Karton</button>
+                        </td>
+                        <td>{{pregled.vreme | date:'dd-MM-yyyy'}}</td>
+                        <td>{{pregled.vreme | date:'hh-mm a'}}</td>
+                        <th>
+                            <button class="btn btn-danger" (click)="otkazati(pregled)">Otkazati</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center" *ngIf="pregledi.length>0">
+            <div class="col-md-5">
+                <div class="mb-3">
+                    <label for="razlog_otkazivanja" class="form-label">Razlog otkazivanja:</label>
+                    <input type="text" id="razlog_otkazivanja" class="form-control" [(ngModel)]="razlog_otkazivanja">
+                    <div class="mb-3" style="font: bold; color: red;">
+                        {{error_message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="unos_izvestaja">
+        <h2>Vaši prethodni pregledi (uključujući i trenutni)</h2>
+        <br>
+        <div *ngIf="!(prethodni_pregledi.length>0)" class="col-md-5">
+            Nemate prethodne preglede za koje niste ostavili izveštaj.
+        </div>
+        <div class="table-responsive" *ngIf="prethodni_pregledi.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Vrsta pregleda</th>
+                        <th>Pacijent</th>
+                        <th>Karton pacijenta</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Uneti izveštaj</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let pregled of prethodni_pregledi">
+                        <td>{{pregled.naziv}}</td>
+                        <td>{{pregled.imePacijenta}} {{pregled.prezimePacijenta}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="karton(pregled.pacijent)">Karton</button>
+                        </td>
+                        <td>{{pregled.vreme | date:'dd-MM-yyyy'}}</td>
+                        <td>{{pregled.vreme | date:'hh-mm a'}}</td>
+                        <th>
+                            <button class="btn btn-info" (click)="izvestaj(pregled)">Uneti izveštaj</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div id="karton_pacijenta" *ngIf="karton_bool">
+        <h2>
+            Izveštaji za pacijenta: {{pacijent.ime}} {{pacijent.prezime}} &nbsp;
+            <button class="btn btn-warning" (click)="zatvoritiKarton()">Zatvori karton</button>
+        </h2>
+        <br>
+        <div *ngIf="!(izvestaji.length>0)" class="col-md-5">
+            Ovaj pacijent nema izveštaje u kartonu.
+        </div>
+        <div class="table-responsive" *ngIf="izvestaji.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Lekar</th>
+                        <th>Specijalizacija</th>
+                        <th>Razlog dolaska</th>
+                        <th>Dijagnoza</th>
+                        <th>Preporučena terapija</th>
+                        <th>Preporučen dan kontrole</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let izvestaj of izvestaji">
+                        <td>{{izvestaj.vreme | date:'dd-MM-yyyy'}}</td>
+                        <td>{{izvestaj.vreme | date:'hh-mm a'}}</td>
+                        <td>{{izvestaj.imeLekara}} {{izvestaj.prezimeLekara}}</td>
+                        <td>{{izvestaj.specijalizacija}}</td>
+                        <td>{{izvestaj.razlog_dolaska}}</td>
+                        <td>{{izvestaj.dijagnoza}}</td>
+                        <td>{{izvestaj.preporucena_terapija}}</td>
+                        <td>{{izvestaj.datum_kontrole | date:'dd-MM-yyyy'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center" *ngIf="unos_izvestaja">
+        <h3 style="text-align: center;">Unos izveštaja</h3>
+    </div>
+    <div class="row d-flex justify-content-center" id="karton_pacijenta" *ngIf="unos_izvestaja">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="razlog_dolaska_unos" class="form-label">Razlog dolaska:</label>
+                <input type="text" id="razlog_dolaska_unos" class="form-control" [(ngModel)]="razlog_dolaska">
+            </div>
+            <div class="mb-3">
+                <label for="dijagnoza_unos" class="form-label">Dijagnoza:</label>
+                <input type="text" class="form-control" id="dijagnoza_unos" [(ngModel)]="dijagnoza">
+            </div>
+            <div class="mb-3">
+                <label for="preporucena_terapija_unos" class="form-label">Preporučena terapija:</label>
+                <input type="text" class="form-control" id="preporucena_terapija_unos"
+                    [(ngModel)]="preporucena_terapija">
+            </div>
+            <div class="mb-3">
+                <label for="datum_kontrole_unos" class="form-label">Preporučen datum kontrole:</label>
+                <input type="date" class="form-control" id="datum_kontrole_unos"
+                    [(ngModel)]="preporucen_datum_kontrole">
+            </div>
+            <button class="btn btn-primary" (click)="unetiIzvestaj()">Unesi izveštaj</button> &nbsp;
+            <button class="btn btn-warning" (click)="odustani()">Odustani</button>
+            <br>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message_izvestaj}}
+            </div>
+        </div>
+    </div>
+</div>
+<br>

@@ -1,0 +1,26 @@
+<br>
+<div class="container-fluid" id="all-content">
+    <!-- <div class="row d-flex justify-content-center" id="povratak-na-pocetnu">
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="povratak()">Povratak na pocetnu</button> &nbsp;
+            <button class="btn btn-primary" (click)="izloguj()">Izloguj se</button> 
+        </div>
+    </div> -->
+    <br>
+    <div class="row d-flex justify-content-center">
+        <h3 style="text-align: center;">Dodavanje nove promocije/akcije</h3>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center" id="login-forma">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <label for="tekst_unos" class="form-label">Oglas za promociju:</label>
+                <textarea class="form-control" id="tekst_unos" rows="3" [(ngModel)]="tekst"></textarea>
+            </div>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{error_message}}
+            </div>
+            <button class="btn btn-primary" (click)="dodajPromociju()">Dodajte</button>
+        </div>
+    </div>
+</div>

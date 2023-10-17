@@ -1,0 +1,257 @@
+<br>
+<div class="container-fluid">
+    <h2>Zahtevi za registraciju</h2>
+    <br>
+    <div *ngIf="!(pacijenti_na_cekanju.length>0)" class="container-fluid justify-content-center">
+        Nema pacijenata sa zahtevima za registraciju.
+    </div>
+    <div class="table-responsive" *ngIf="pacijenti_na_cekanju.length>0">
+        <table class="table">
+            <thead class="thead-dark table-group-divider">
+                <tr>
+                    <th scope="col">Profilna slika</th>
+                    <th scope="col">Korisnicko ime</th>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Prezime</th>
+                    <th scope="col">Adresa</th>
+                    <th scope="col">Kontakt telefon</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Prihvati/Odbij zahtev</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let pacijent of pacijenti_na_cekanju">
+                    <td>
+                        <img src="http://localhost:4000/uploads/{{pacijent.profilna}}" class="profile-image"
+                            style="width: 100px;">
+                    </td>
+                    <td>{{pacijent.korisnicko_ime}}</td>
+                    <td>{{pacijent.ime}}</td>
+                    <td>{{pacijent.prezime}}</td>
+                    <td>{{pacijent.adresa}}</td>
+                    <td>{{pacijent.kontakt_telefon}}</td>
+                    <td>{{pacijent.email}}</td>
+                    <td>
+                        <div class="container justify-content-center">
+                            <button class="btn btn-success" (click)="prihvati(pacijent)">Prihvati</button>
+                            <button class="btn btn-danger" (click)="odbij(pacijent)">Odbij</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <h2>Lista pacijenata</h2>
+    <br>
+    <div *ngIf="!(pacijenti.length>0)" class="container-fluid justify-content-center">
+        Nema pacijenata u ordinaciji.
+    </div>
+    <div class="table-responsive" *ngIf="pacijenti.length>0">
+        <table class="table">
+            <thead class="thead-dark table-group-divider">
+                <tr>
+                    <th scope="col">Profilna slika</th>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Prezime</th>
+                    <th scope="col">Adresa</th>
+                    <th scope="col">Kontakt telefon</th>
+                    <th scope="col">Email</th>
+                    <th>Ažuriraj</th>
+                    <th>Obriši</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let pacijent of pacijenti">
+                    <td>
+                        <img src="http://localhost:4000/uploads/{{pacijent.profilna}}" class="profile-image"
+                            style="width: 100px;">
+                    </td>
+                    <td>{{pacijent.ime}}</td>
+                    <td>{{pacijent.prezime}}</td>
+                    <td>{{pacijent.adresa}}</td>
+                    <td>{{pacijent.kontakt_telefon}}</td>
+                    <td>{{pacijent.email}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="azuriranjePacijenta(pacijent)">Ažuriraj</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="obrisiPacijenta(pacijent)">Obriši</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center" *ngIf="azuriranje_pacijenta">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <h5 style="text-align: center;">Ažuriranje pacijenta: {{pacijent_za_azurirati.ime}}
+                    {{pacijent_za_azurirati.prezime}}</h5>
+            </div>
+            <div class="mb-3">
+                <label for="ime_azuriranje_unos" class="form-label">Ažuriraj ime:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="pacijent_ime_bool">
+                <input type="text" id="ime_azuriranje_unos" class="form-control" [(ngModel)]="pacijent_ime_azuriranje"
+                    [disabled]="!pacijent_ime_bool">
+            </div>
+            <div class="mb-3">
+                <label for="prezime_azuriranje_unos" class="form-label">Ažuriraj prezime:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="pacijent_prezime_bool">
+                <input type="text" id="prezime_azuriranje_unos" class="form-control"
+                    [(ngModel)]="pacijent_prezime_azuriranje" [disabled]="!pacijent_prezime_bool">
+            </div>
+            <div class="mb-3">
+                <label for="adresa_azuriranje_unos" class="form-label">Ažuriraj adresa:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="pacijent_adresa_bool">
+                <input type="text" id="adresa_azuriranje_unos" class="form-control"
+                    [(ngModel)]="pacijent_adresa_azuriranje" [disabled]="!pacijent_adresa_bool">
+            </div>
+            <div class="mb-3">
+                <label for="email_azuriranje_unos" class="form-label">Ažuriraj email:</label>&nbsp;
+                <input type="checkbox" [(ngModel)]="pacijent_email_bool">
+                <input type="text" id="email_azuriranje_unos" class="form-control"
+                    [(ngModel)]="pacijent_email_azuriranje" [disabled]="!pacijent_email_bool">
+            </div>
+            <div class="mb-3">
+                <label for="kontakt_telefon_azuriranje_unos" class="form-label">Ažuriraj kontakt telefon:</label>&nbsp;
+                <input type="checkbox" [(ngModel)]="pacijent_kontakt_bool">
+                <input type="text" id="kontakt_telefon_azuriranje_unos" class="form-control"
+                    [(ngModel)]="pacijent_kontakt_telefon_azuriranje" [disabled]="!pacijent_kontakt_bool">
+            </div>
+            <div class="mb-3">
+                <label for="pacijent_slika_azuriranje_unos" class="form-label">Ažuriraj profilnu sliku:</label><br>
+                <input type="file" id="slika_azuriranje_unos" (change)="izabranFajlPacijent($event)"><br>
+                Izabrani fajl: {{pacijent_fileName || "Niste uneli fajl."}}<br>
+                Ako ne izaberete fajl, neće se ažurirati profilna. <br>
+                <div class="mb-3" style="font: bold; color: orangered;">
+                    {{pacijent_file_error_message}}
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="azurirajPacijenta()">Ažuriraj</button> &nbsp;
+            <button class="btn btn-warning" (click)="odustaoAzuriranjePacijenta()">Odustani</button>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{pacijent_error_message}}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <h2>Lista lekara</h2>
+    <br>
+    <div *ngIf="!(lekari.length>0)" class="container-fluid justify-content-center">
+        Nema lekara u ordinaciji.
+    </div>
+    <div class="table-responsive" *ngIf="lekari.length>0">
+        <table class="table">
+            <thead class="thead-dark table-group-divider">
+                <tr>
+                    <th>Profilna slika</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Adresa</th>
+                    <th>Email</th>
+                    <th>Kontakt telefon</th>
+                    <th>Broj lekarske licence</th>
+                    <th>Specijalizacija</th>
+                    <th>Ogranak</th>
+                    <th>Ažuriraj</th>
+                    <th>Obriši</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let lekar of lekari">
+                    <td>
+                        <img src="http://localhost:4000/uploads/{{lekar.profilna}}" class="profile-image"
+                            style="width: 100px; height: 100px;">
+                    </td>
+                    <td>{{lekar.ime}}</td>
+                    <td>{{lekar.prezime}}</td>
+                    <td>{{lekar.adresa}}</td>
+                    <td>{{lekar.email}}</td>
+                    <td>{{lekar.kontakt_telefon}}</td>
+                    <td>{{lekar.broj_lekarske_licence}}</td>
+                    <td>{{lekar.specijalizacija}}</td>
+                    <td>{{lekar.ogranak}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="azuriranjeLekara(lekar)">Ažuriraj</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="obrisiLekara(lekar)">Obriši</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-center" *ngIf="azuriranje_lekara">
+        <div class="col-md-5">
+            <div class="mb-3">
+                <h5 style="text-align: center;">Ažuriranje lekara: {{lekar_za_azurirati.ime}}
+                    {{lekar_za_azurirati.prezime}}</h5>
+            </div>
+            <div class="mb-3">
+                <label for="ime_azuriranje_unos" class="form-label">Ažuriraj ime:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_ime_bool">
+                <input type="text" id="ime_azuriranje_unos" class="form-control" [(ngModel)]="lekar_ime_azuriranje"
+                    [disabled]="!lekar_ime_bool">
+            </div>
+            <div class="mb-3">
+                <label for="prezime_azuriranje_unos" class="form-label">Ažuriraj prezime:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_prezime_bool">
+                <input type="text" id="prezime_azuriranje_unos" class="form-control"
+                    [(ngModel)]="lekar_prezime_azuriranje" [disabled]="!lekar_prezime_bool">
+            </div>
+            <div class="mb-3">
+                <label for="adresa_azuriranje_unos" class="form-label">Ažuriraj adresa:</label> &nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_adresa_bool">
+                <input type="text" id="adresa_azuriranje_unos" class="form-control"
+                    [(ngModel)]="lekar_adresa_azuriranje" [disabled]="!lekar_adresa_bool">
+            </div>
+            <div class="mb-3">
+                <label for="kontakt_telefon_azuriranje_unos" class="form-label">Ažuriraj kontakt
+                    telefon:</label>&nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_kontakt_bool">
+                <input type="text" id="kontakt_telefon_azuriranje_unos" class="form-control"
+                    [(ngModel)]="lekar_kontakt_telefon_azuriranje" [disabled]="!lekar_kontakt_bool">
+            </div>
+            <div class="mb-3">
+                <label for="broj_lekarske_licence_azuriranje_unos" class="form-label">Ažuriraj broj lekarske
+                    licence:</label>&nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_br_licence_bool">
+                <input type="number" id="broj_lekarske_licence_azuriranje_unos" class="form-control"
+                    [(ngModel)]="lekar_broj_lekarske_licence_azuriranje" [disabled]="!lekar_br_licence_bool">
+            </div>
+            <div class="mb-3">
+                <label for="specijalizacija_azuriranje_unos" class="form-label">Ažuriraj
+                    specijalizaciju:</label>&nbsp;
+                <input type="checkbox" [(ngModel)]="lekar_specijalizacija_bool">
+                <select id="specijalizacija_azuriranje_unos" [(ngModel)]="lekar_specijalizacija_azuriranje"
+                    class="form-select" [disabled]="!lekar_specijalizacija_bool">
+                    <option *ngFor="let s of sveSpecijalizacije" value="{{s.naziv}}">{{s.naziv}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="slika_azuriranje_unos" class="form-label">Ažuriraj profilnu sliku:</label><br>
+                <input type="file" id="slika_azuriranje_unos" (change)="izabranFajlLekar($event)"><br>
+                Izabrani fajl: {{lekar_fileName || "Niste uneli fajl."}}<br>
+                Ako ne izaberete fajl, neće se ažurirati profilna. <br>
+                <div class="mb-3" style="font: bold; color: orangered;">
+                    {{lekar_file_error_message}}
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="azurirajLekara()">Ažuriraj</button> &nbsp;
+            <button class="btn btn-warning" (click)="odustaoAzuriranjeLekara()">Odustani</button>
+            <br>
+            <div class="mb-3" style="font: bold; color: red;">
+                {{lekar_error_message}}
+            </div>
+        </div>
+    </div>
+</div>

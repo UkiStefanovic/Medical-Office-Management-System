@@ -1,0 +1,36 @@
+<br>
+<div class="container-fluid" id="all_content">
+    <div id="tabela_obavestenja">
+        <h2>Vaša obaveštenja:</h2>
+        <br>
+        <div *ngIf="!(obavestenja.length>0)" class="col-md-5">
+            Nemate obaveštenja.
+        </div>
+        <div class="table-responsive" *ngIf="obavestenja.length>0">
+            <table class="table">
+                <thead class="thead-dark table-group-divider">
+                    <tr>
+                        <th>Vreme</th>
+                        <th>obaveštenje</th>
+                        <th>Pročitati</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr *ngFor="let obavestenje of obavestenja">
+                        <td [class.neprocitano]="!obavestenje.procitano">
+                            {{obavestenje.vreme | date:'dd-MM-yyyy'}} {{obavestenje.vreme | date:'hh-mm a'}}
+                        </td>
+                        <td [class.neprocitano]="!obavestenje.procitano">
+                            {{obavestenje.tekst}}
+                        </td>
+                        <td [class.neprocitano]="!obavestenje.procitano">
+                            <div *ngIf="!obavestenje.procitano">
+                                <button class="btn btn-success" (click)="procitati(obavestenje)">Pročitati</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
