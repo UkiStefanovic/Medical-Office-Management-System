@@ -45,11 +45,6 @@ To run this project locally, follow these steps:
 - `backend/` - Contains the backend code.
 - `database/` - Includes database configuration and schema.
 
-## Screenshots
-
-![Screenshot 1](/screenshots/screenshot1.png)
-![Screenshot 2](/screenshots/screenshot2.png)
-
 ## License
 
 This project isn't licenced. It is a student project.
